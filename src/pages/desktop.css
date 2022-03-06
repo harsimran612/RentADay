@@ -1,0 +1,28 @@
+@media screen and (min-width: 450px) {
+  .Auth__container {
+    background-color: #f6fafd;
+  }
+
+  .Auth__heading {
+    font-size: 24px;
+    padding: 16px 0 16px 0;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(0, 61, 0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+  }
+  .Auth__heading i {
+    display: none;
+  }
+
+  .Auth__content {
+    max-width: 390px;
+  }
+
+  .Auth__userTypeItem {
+    flex-direction: row;
+  }
+}

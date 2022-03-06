@@ -1,0 +1,22 @@
+.home__section {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+h3 {
+  padding: 10px;
+}
+.home a {
+  float: right;
+  margin-right: 35px;
+}
+
+@media screen and (min-width: 928px) {
+  .home__section {
+    display: flex;
+    flex-direction: row;
+  }
+  h3 {
+    padding: 30px;
+  }
+}

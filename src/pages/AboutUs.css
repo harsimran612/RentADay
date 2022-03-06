@@ -1,0 +1,46 @@
+.aboutus-picture {
+  background: url("../images/Banner.jpeg");
+  height: 30vh;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.aboutus-info,
+.aboutus-team {
+  padding: 20px;
+}
+.aboutus-div {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  justify-items: center;
+}
+.aboutus-image1 {
+  display: block;
+  text-align: center;
+  align-items: center;
+  padding: 25px;
+}
+.aboutus-div img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+.aboutus-team h3 {
+  text-align: center;
+  color: #e2a02b;
+}
+.aboutus p {
+  text-align: center;
+}
+
+@media screen and (min-width: 450px) {
+  .aboutus-picture {
+    height: 70vh;
+  }
+  .aboutus-div {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+  }
+}

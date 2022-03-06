@@ -1,0 +1,23 @@
+.searchpage h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+.searchpage_card {
+  padding: 20px;
+}
+.searchpage_card > * {
+  margin-top: 30px;
+}
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 928px) {
+  .searchpage_card {
+    display: flex;
+    flex-direction: row;
+  }
+  h3 {
+    padding: 30px;
+  }
+}
