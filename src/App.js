@@ -13,6 +13,13 @@ import ExpandedCard from './pages/ExpandedCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
+import ClosestPlaceLists from './pages/closest-place/ClosestPlaceLists';
+import DetailedClosestPlace from './pages/closest-place/DetailedClosestPlace';
+import RecommendedPlaceLists from './pages/recommended-place/RcmdPlaceLists';
+import DetailedRecommendedPlace from './pages/recommended-place/DetailedRcmdPlace';
+import NewlyListedPlaceLists from './pages/newly-listed-place/NewlyListedPlaceLists';
+import DetailedNewlyListedPlace from './pages/newly-listed-place/DetailedNewlyListedPlace';
+
 function App() {
   return (
 
@@ -31,7 +38,14 @@ function App() {
               <Route path="pages/profile/:username" element={<Profile/>}/>
               <Route path="pages/expandedcard" element={<ExpandedCard/>}/>
             
-        
+              <Route path="/closest-place" element={<ClosestPlaceLists />} />
+              <Route path="/closest-place/:placeId" element={<DetailedClosestPlace />} />
+          
+              <Route path="/recommended-place" element={<RecommendedPlaceLists />} />
+              <Route path="/recommended-place/:placeId" element={<DetailedRecommendedPlace />} />
+
+              <Route path="/newly-listed-place" element={<NewlyListedPlaceLists />} />
+              <Route path="/newly-listed-place/:placeId" element={<DetailedNewlyListedPlace />} />
         </Routes>
         <Footer />
         
