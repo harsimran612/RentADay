@@ -1,6 +1,13 @@
 import React from 'react';
 import './AboutUs.css';
-import logo from "../images/Banner.jpeg";
+import Nikhil from "../images/Nikhil deswal.png";
+import Harsimran from "../images/Harsimran singh.png";
+import Jeril from "../images/Jeril James.png";
+import Josh from "../images/Joshline Mathew.png";
+import Rahul from "../images/Rahul naranthatta.png";
+import Himani from "../images/Himani gupta.png";
+import Song from "../images/song.png";
+
 
 function AboutUs(){
     return(
@@ -21,52 +28,51 @@ function AboutUs(){
                 <div className='aboutus-div'>
                     
                     <div className="aboutus-image1"> 
-                        <img src={logo} alt=""/>
-                        <h4>Name</h4>
+                        <img src={Nikhil} alt=""/>
+                        <h4>Nikhil Deswal</h4>
                         <p>Project Manager</p>
                     </div>
 
                     <div className="aboutus-image1">
-                        <img src={logo} alt=""/>
-                        <h4>Name</h4>
-                        <p>Project Manager</p>
-                    </div>
-
-
-                    <div className="aboutus-image1">
-                        <img src={logo} alt=""/>
-                        <h4>Name</h4>
-                        <p>Project Manager</p>
-                    </div>
-
-
-                    <div className="aboutus-image1">
-                        <img src={logo} alt=""/>
-                        <h4>Name</h4>
-                        <p>Project Manager</p>
+                        <img src={Harsimran} alt=""/>
+                        <h4>Harsimran Singh</h4>
+                        <p>Backend Developer</p>
                     </div>
 
                     <div className="aboutus-image1">
-                        <img src={logo} alt=""/>
-                        <h4>Name</h4>
-                        <p>Project Manager</p>
+                        <img src={Josh} alt=""/>
+                        <h4>Joshline Mathew</h4>
+                        <p>UI/UX Designer</p>
                     </div>
 
                     <div className="aboutus-image1">
-                        <img src={logo} alt=""/>
-                        <h4>Name</h4>
-                        <p>Project Manager</p>
+                        <img src={Jeril} alt=""/>
+                        <h4>Jeril James</h4>
+                        <p>Backend Developer</p>
+                    </div>
+
+
+                    
+
+                    <div className="aboutus-image1">
+                        <img src={Song} alt=""/>
+                        <h4>Songhui Park</h4>
+                        <p>UI/UX Designer</p>
                     </div>
 
                     <div className="aboutus-image1">
-                        <img src={logo} alt=""/>
-                        <h4>Name</h4>
-                        <p>Project Manager</p>
+                        <img src={Rahul} alt=""/>
+                        <h4>Rahul Naranthatta</h4>
+                        <p>Frontend Developer</p>
                     </div>
 
-                    <div className="aboutus-button">
-                        <button>Click to Start</button>
+                    <div className="aboutus-image1">
+                        <img src={Himani} alt=""/>
+                        <h4>Himani Gupta</h4>
+                        <p>Frontend Developer</p>
                     </div>
+
+                    
 
                 </div>
 

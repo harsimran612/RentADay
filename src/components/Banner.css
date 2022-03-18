@@ -4,6 +4,8 @@ h1 {
 .banner_search {
   padding: 20px;
   text-align: center;
+  background-image: url("../images/Banner.jpeg");
+  background-size: cover;
 }
 .banner_search .location,
 .price,
@@ -39,6 +41,7 @@ h1 {
     text-align: center;
     padding-top: 10vh;
     align-items: center;
+    background-image: none;
   }
   ::placeholder {
     color: white;

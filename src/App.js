@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp';
 import Splash from './pages/Splash';
 import Profile from './pages/Profile';
 import ExpandedCard from './pages/ExpandedCard';
+import AddListing from './pages/AddListing';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
@@ -37,6 +38,7 @@ function App() {
               <Route path="pages/profile" element={<Profile/>}/>
               <Route path="pages/profile/:username" element={<Profile/>}/>
               <Route path="pages/expandedcard" element={<ExpandedCard/>}/>
+              <Route path="addlisting" element={<AddListing/>}/>
             
               <Route path="/closest-place" element={<ClosestPlaceLists />} />
               <Route path="/closest-place/:placeId" element={<DetailedClosestPlace />} />

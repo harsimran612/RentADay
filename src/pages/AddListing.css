@@ -1,0 +1,119 @@
+.addlisting {
+  margin: 20px;
+}
+.addlisting h2 {
+  color: #2a4b3d;
+}
+.addlisting_addimages {
+  display: grid;
+  column-gap: 1rem;
+  row-gap: 1rem;
+  grid-template-columns: repeat(1, 1fr);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.addlisting_addimages img {
+  height: 250px;
+  width: 250px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+input[type="file"] {
+  margin: 10px;
+}
+
+.addlisting_form {
+  margin: 10px;
+  margin-top: 30px;
+}
+.addlisting_form input[type="submit"] {
+  width: 100%;
+  background-color: #2a4b3d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.addlisting_form input[type="text"],
+input[type="time"],
+input[type="date"],
+input[type="number"] {
+  width: 90vw;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.addlisting_form input[type="textarea"] {
+  width: 90vw;
+  padding: 12px 20px;
+  height: 200px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 550px) {
+  .addlisting_addimages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 700px) {
+  .addlisting_addimages img {
+    height: 350px;
+    width: 350px;
+  }
+}
+@media screen and (min-width: 900px) {
+  .addlisting_addimages img {
+    height: 250px;
+    width: 250px;
+  }
+  .addlisting_addimages {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .addlisting_form input[type="text"],
+  input[type="time"],
+  input[type="date"],
+  input[type="number"] {
+    width: 100%;
+  }
+  .addlisting_form input[type="textarea"] {
+    width: 100%;
+  }
+  .addlisting_form label {
+    display: flex;
+    flex-direction: column;
+  }
+  .addlisting_form {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .addlisting_addimages img {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .addlisting_addimages img {
+    height: 400px;
+    width: 400px;
+  }
+}
+@media screen and (min-width: 1556px) {
+  .addlisting_addimages img {
+    height: 350px;
+    width: 350px;
+  }
+  .addlisting_addimages {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

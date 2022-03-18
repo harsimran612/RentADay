@@ -3,6 +3,7 @@ import './Header.css';
 import logo1 from '../images/logo.jpeg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavDropdown} from'react-bootstrap';
+import Userphoto from '../images/Steve.jpeg';
 
 
 function Header(){
@@ -29,7 +30,8 @@ function Header(){
                     <a href="./home" >Reviews</a>
                 </div>
                 <div className="profile-button">
-                    <NavDropdown title="Username" id="basic-nav-dropdown">
+                    <img src={Userphoto} alt=""></img>
+                    <NavDropdown title="Ryan Davis" id="basic-nav-dropdown">
                         <NavDropdown.Item href={"../pages/profile"}>Profile</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Payment</NavDropdown.Item>
                         <NavDropdown.Divider />
