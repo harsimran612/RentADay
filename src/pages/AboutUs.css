@@ -26,7 +26,7 @@
   border-radius: 100px;
   object-fit: cover;
 }
-.aboutus-team h3 {
+.aboutus h3 {
   text-align: center;
   color: #e2a02b;
 }
@@ -38,6 +38,28 @@
   .aboutus-picture {
     height: 70vh;
   }
+  .aboutus-div {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 800px) {
+  .aboutus-div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 900px) {
+  .aboutus-div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .aboutus-div {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
