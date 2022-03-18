@@ -38,9 +38,9 @@ input[type="file"] {
   cursor: pointer;
 }
 .addlisting_form input[type="text"],
-input[type="time"],
-input[type="date"],
-input[type="number"] {
+.addlisting_form input[type="time"],
+.addlisting_form input[type="date"],
+.addlisting_form input[type="number"] {
   width: 90vw;
   padding: 12px 20px;
   margin: 8px 0;
@@ -79,9 +79,9 @@ input[type="number"] {
     grid-template-columns: repeat(3, 1fr);
   }
   .addlisting_form input[type="text"],
-  input[type="time"],
-  input[type="date"],
-  input[type="number"] {
+  .addlisting_form input[type="time"],
+  .addlisting_form input[type="date"],
+  .addlisting_form input[type="number"] {
     width: 100%;
   }
   .addlisting_form input[type="textarea"] {
