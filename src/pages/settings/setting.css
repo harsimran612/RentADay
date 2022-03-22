@@ -1,0 +1,11 @@
+.settings__container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  max-width: 850px;
+  width: 100%;
+}
+
+.setting__content {
+  margin-top: 20px;
+}

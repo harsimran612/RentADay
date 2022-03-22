@@ -1,0 +1,25 @@
+.mobile__nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+}
+.mobile__nav--item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+.mobile__nav--item:last-child {
+  gap: 25px;
+}
+.mobile__nav--item span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 700px) {
+  .mobile__nav {
+    display: none;
+  }
+}

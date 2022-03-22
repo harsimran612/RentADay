@@ -3,6 +3,7 @@ import './Header.css';
 import logo1 from '../images/logo.jpeg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavDropdown} from'react-bootstrap';
+import Userphoto from '../images/Steve.jpeg';
 
 
 function Header(){
@@ -22,14 +23,19 @@ function Header(){
                 </div>
                     
                 <div className="Home_Setting_Nav">
-                    <a href="./home" >Settings</a>
+                    <a href="/settings" >Settings</a>
+                </div>
+
+                <div className="Home_Setting_Nav">
+                    <a href="/contact-us" >Contact Us</a>
                 </div>
 
                 <div className="Home_Search_Nav">
                     <a href="./home" >Reviews</a>
                 </div>
                 <div className="profile-button">
-                    <NavDropdown title="Username" id="basic-nav-dropdown">
+                    <img src={Userphoto} alt=""></img>
+                    <NavDropdown title="Ryan Davis" id="basic-nav-dropdown">
                         <NavDropdown.Item href={"../pages/profile"}>Profile</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Payment</NavDropdown.Item>
                         <NavDropdown.Divider />

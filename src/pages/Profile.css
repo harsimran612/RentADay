@@ -19,6 +19,14 @@
   height: 100pt;
   width: 100pt;
   border-radius: 100%;
+  object-fit: cover;
+}
+.profile_name {
+  font-weight: 800;
+  font-size: 40px;
+}
+.profile_location {
+  font-size: small;
 }
 
 /* Profile 2 */
