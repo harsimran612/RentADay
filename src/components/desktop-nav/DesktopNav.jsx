@@ -12,13 +12,13 @@ export default function DesktopNav({
   return (
     <div className="desktop__nav">
       <Link to={page1Link} className="heading">
-        <sapn>{page1}</sapn>
+        <span>{page1}</span>
       </Link>
       <i className="fas fa-angle-right"></i>
       {page2 && (
         <>
           <Link to={page2Link}>
-            <sapn>{page2}</sapn>
+            <span>{page2}</span>
           </Link>
           <i className="fas fa-angle-right"></i>
         </>

@@ -1,14 +1,21 @@
 import React from "react";
 import "./MobileNav.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function MobileNav({ link, page }) {
+  let goBack = useNavigate();
+
   return (
     <div className="mobile__nav">
       <div className="mobile__nav--item">
-        <Link to={link}>
-          <i className="fa fa-arrow-left"></i>
-        </Link>
+        {link ? (
+          <Link to={link}>
+            <i className="fa fa-arrow-left"></i>
+          </Link>
+        ) : (
+          <i className="fa fa-arrow-left" onClick={() => goBack(-1)}></i>
+        )}
+
         <span>{page}</span>
       </div>
       <div className="mobile__nav--item">

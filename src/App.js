@@ -20,6 +20,8 @@ import RecommendedPlaceLists from './pages/recommended-place/RcmdPlaceLists';
 import DetailedRecommendedPlace from './pages/recommended-place/DetailedRcmdPlace';
 import NewlyListedPlaceLists from './pages/newly-listed-place/NewlyListedPlaceLists';
 import DetailedNewlyListedPlace from './pages/newly-listed-place/DetailedNewlyListedPlace';
+import Setting from './pages/settings/setting';
+import ContactUs from './pages/contact-us/contact';
 
 function App() {
   return (
@@ -48,6 +50,9 @@ function App() {
 
               <Route path="/newly-listed-place" element={<NewlyListedPlaceLists />} />
               <Route path="/newly-listed-place/:placeId" element={<DetailedNewlyListedPlace />} />
+        
+              <Route path="/settings" element={<Setting />} />
+              <Route path="/contact-us" element={<ContactUs />} />
         </Routes>
         <Footer />
         

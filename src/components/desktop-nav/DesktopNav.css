@@ -3,6 +3,8 @@
   align-items: center;
   font-size: 20px;
   width: 100%;
+  padding: 10px;
+  display: none;
 }
 .desktop__nav .heading {
   font-weight: bold;
@@ -17,8 +19,8 @@
 .desktop__nav--page {
   margin-left: 10px;
 }
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 700px) {
   .desktop__nav {
-    display: none;
+    display: block;
   }
 }

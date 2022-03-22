@@ -23,7 +23,11 @@ function Header(){
                 </div>
                     
                 <div className="Home_Setting_Nav">
-                    <a href="./home" >Settings</a>
+                    <a href="/settings" >Settings</a>
+                </div>
+
+                <div className="Home_Setting_Nav">
+                    <a href="/contact-us" >Contact Us</a>
                 </div>
 
                 <div className="Home_Search_Nav">
