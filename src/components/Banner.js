@@ -25,7 +25,7 @@ function Banner(){
 
                 <div className='button'>
                     <button onClick={()=>{
-                        navigate('../pages/ExpandedCard');
+                        navigate('../newly-listed-place');
                     }}>Search</button>
                 </div>
             </div>

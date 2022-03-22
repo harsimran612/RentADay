@@ -6,10 +6,10 @@ import MobileNav from "../../components/mobile-nav/MobileNav";
 export default function NewlyListedPlaceLists() {
   return (
     <div className="rp__container--xl">
-      <MobileNav link="/pages/home" page="Recommended Place" />
+      <MobileNav link="/home" page="Recommended Place" />
       <DesktopNav
         page1="Listings"
-        page1Link="/pages/home"
+        page1Link="/home"
         title="Newly Listed Place"
       />
 

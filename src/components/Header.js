@@ -36,7 +36,7 @@ function Header(){
                 <div className="profile-button">
                     <img src={Userphoto} alt=""></img>
                     <NavDropdown title="Ryan Davis" id="basic-nav-dropdown">
-                        <NavDropdown.Item href={"../pages/profile"}>Profile</NavDropdown.Item>
+                        <NavDropdown.Item href={"../profile"}>Profile</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Payment</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
