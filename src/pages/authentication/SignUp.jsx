@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Sign.css";
 import "./desktop.css";
+import axios from "axios";
 
 export default function Auth() {
   const [showPswd, setShowPswd] = useState(false);
@@ -28,15 +29,60 @@ export default function Auth() {
 }
 
 const UserForm = ({ showPswd, setShowPswd }) => {
+  const [name,setName] = useState();
+  const [email,setEmail] = useState();
+  const [password,setPassword] = useState();
+  const [confirmPassword,setConfirmPassword] = useState();
   const changeVisibility = () => {
     setShowPswd(!showPswd);
   };
+  const signUpDetails = async (e) =>{
+    if (!name || !email || !password || !confirmPassword) {
+      alert("Please Fill all the Feilds" );
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert("Passwords Do Not Match");
+      return;
+    }
+    e.preventDefault();
+    try {
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
+      // const { data } = await axios.post(
+      //   "/api/user",
+      //   {
+      //     name,
+      //     email,
+      //     password,
+      //   },
+      //   config
+      // );
+      fetch('http://localhost:8080/api/user', {
+        mode: 'no-cors',
+        method: 'POST', // or 'PUT'
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      .then(response => response.json())
+      .then(data => console.log(data));
+      alert("data");
+      // localStorage.setItem("userInfo", JSON.stringify("data"));
+      // history.push("/home");
+    } catch (error) {
+      alert("Error Occured!");
+    }
+  }
   return (
     <>
       <form className="Auth__formItems">
         <div className="Auth__formItem">
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" />
+          <input type="text" id="name" name="name" onChange={(e)=>setName(e.target.value)}/>
           <label for="name">
             Make sure it matches the name on your goverment ID.
           </label>
@@ -44,13 +90,13 @@ const UserForm = ({ showPswd, setShowPswd }) => {
 
         <div className="Auth__formItem">
           <label for="email">Email</label>
-          <input type="text" id="name" name="email" />
+          <input type="text" id="name" name="email" onChange={(e)=>setEmail(e.target.value)}/>
         </div>
 
         <div className="Auth__formItem">
           <label for="password">Password</label>
           <div name="password" className="Auth__formItem--password">
-            <input type={`${showPswd ? "text" : "password"}`} id="name" />
+            <input type={`${showPswd ? "text" : "password"}`} id="name" onChange={(e)=>setPassword(e.target.value)}/>
             <i
               className={`fas ${showPswd ? "fa-eye" : "fa-eye-slash"}`}
               onClick={changeVisibility}
@@ -61,7 +107,7 @@ const UserForm = ({ showPswd, setShowPswd }) => {
         <div className="Auth__formItem">
           <label for="name">Confirm Password</label>
           <div name="password" className="Auth__formItem--password">
-            <input type={`${showPswd ? "text" : "password"}`} id="name" />
+            <input type={`${showPswd ? "text" : "password"}`} id="name" onChange={(e)=>setConfirmPassword(e.target.value)} />
             <i
               className={`fas ${showPswd ? "fa-eye" : "fa-eye-slash"}`}
               onClick={changeVisibility}
@@ -69,14 +115,7 @@ const UserForm = ({ showPswd, setShowPswd }) => {
           </div>
         </div>
 
-        <div className="Auth__TandC">
-          <input type="checkbox" name="tc" value="Bike" />
-          <label for="tc">
-            i agree to the Terms of service and Privacy policy
-          </label>
-        </div>
-
-        <input type="submit" className="Auth__submitButton" value="Sign Up" />
+        <input type="submit" className="Auth__submitButton" value="Sign Up" onClick={signUpDetails} />
       </form>
 
       <div className="Auth--nav">
