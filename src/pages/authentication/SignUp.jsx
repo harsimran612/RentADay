@@ -52,25 +52,25 @@ const UserForm = ({ showPswd, setShowPswd }) => {
           "Content-type": "application/json",
         },
       };
-      // const { data } = await axios.post(
-      //   "/api/user",
-      //   {
-      //     name,
-      //     email,
-      //     password,
-      //   },
-      //   config
-      // );
-      fetch('http://localhost:8080/api/user', {
-        mode: 'no-cors',
-        method: 'POST', // or 'PUT'
-        headers: {
-          'Content-Type': 'application/json',
+      const { data } = await axios.post(
+        "http://localhost:8080/api/user",
+        {
+          name,
+          email,
+          password,
         },
-      })
-      .then(response => response.json())
-      .then(data => console.log(data));
-      alert("data");
+        config
+      );
+      // fetch('http://localhost:8080/api/user', {
+      //   mode: 'no-cors',
+      //   method: 'POST', // or 'PUT'
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // })
+      // .then(response => response.json())
+      // .then(data => console.log(data));
+      console.log("data");
       // localStorage.setItem("userInfo", JSON.stringify("data"));
       // history.push("/home");
     } catch (error) {
@@ -90,13 +90,13 @@ const UserForm = ({ showPswd, setShowPswd }) => {
 
         <div className="Auth__formItem">
           <label for="email">Email</label>
-          <input type="text" id="name" name="email" onChange={(e)=>setEmail(e.target.value)}/>
+          <input type="text" id="email" name="email" onChange={(e)=>setEmail(e.target.value)}/>
         </div>
 
         <div className="Auth__formItem">
           <label for="password">Password</label>
           <div name="password" className="Auth__formItem--password">
-            <input type={`${showPswd ? "text" : "password"}`} id="name" onChange={(e)=>setPassword(e.target.value)}/>
+            <input type={`${showPswd ? "text" : "password"}`} id="password" onChange={(e)=>setPassword(e.target.value)}/>
             <i
               className={`fas ${showPswd ? "fa-eye" : "fa-eye-slash"}`}
               onClick={changeVisibility}
@@ -107,7 +107,7 @@ const UserForm = ({ showPswd, setShowPswd }) => {
         <div className="Auth__formItem">
           <label for="name">Confirm Password</label>
           <div name="password" className="Auth__formItem--password">
-            <input type={`${showPswd ? "text" : "password"}`} id="name" onChange={(e)=>setConfirmPassword(e.target.value)} />
+            <input type={`${showPswd ? "text" : "password"}`} id="confirmPassword" onChange={(e)=>setConfirmPassword(e.target.value)} />
             <i
               className={`fas ${showPswd ? "fa-eye" : "fa-eye-slash"}`}
               onClick={changeVisibility}

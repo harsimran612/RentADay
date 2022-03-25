@@ -4,7 +4,6 @@ const res = require("express/lib/response");
 const User = require('../models/userModel');
 const router = require("../routes/userRoutes");
 const generateToken = require('../config/generateToken');
-console.log("hii")
 
 const registerUser = asyncHandler (async(req)=>{
     const {name,email,password} = req.body;
@@ -12,7 +11,6 @@ const registerUser = asyncHandler (async(req)=>{
         res.status(400);
         throw new Error("Please enter all fields")
     }
-    console.log("got")
     const userExists = await User.findOne({email});
 
     if(userExists){
@@ -33,7 +31,7 @@ const registerUser = asyncHandler (async(req)=>{
             token:generateToken(user._id),
 
         })
-    }else{
+    } else{
         res.status(400);
         throw new Error("Failed to create new user ")
     }
