@@ -13,6 +13,7 @@
 
 #backend
 /src/backend/node_modules
+/src/backend/logs
 
 # misc
 .DS_Store
@@ -24,3 +25,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
