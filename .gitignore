@@ -13,6 +13,7 @@
 
 #backend
 /src/backend/node_modules
+src/backend/logs/
 /logs
 
 # misc
