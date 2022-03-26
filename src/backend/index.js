@@ -5,7 +5,8 @@ const userRoutes = require("./routes/userRoutes");
 const path = require("path");
 const User = require("./models/userModel");
 const generateToken = require('./config/generateToken');
-var cors = require('cors')
+var cors = require('cors');
+const {notFound,errorHandler} = require('./middlewares/errorMiddleware');
 
 dotenv.config();
 connectDB();
@@ -19,38 +20,35 @@ app.use(cors()) // Use this after the variable declaration
 // });
 
 
-// app.post('/api/user',userRoutes);
-app.post('/api/user', async function (req, res) {
-    const {name,email,password} = req.body;
-    if(!name || !email ||!password){
-        res.status(400);
-        throw new Error("Please enter all fields")
-    }
+app.use('/api/user',userRoutes);
 
-    User.findOne({email}).then(result => {
-        if(result) {
-            res.status(400);
-            throw new Error("user already Exists");
-        } 
-      })
-      .catch(err => console.error(`Failed to find document: ${err}`));
+app.use(notFound);
+app.use(errorHandler);
+// app.post('/api/user', async function (req, res) {
+//     const {name,email,password} = req.body;
+//     if(!name || !email ||!password){
+//         res.status(400);
+//         throw new Error("Please enter all fields")
+//     }
+
+//     User.findOne({email}).then(result => {
+//         if(result) {
+//             res.status(400);
+//             throw new Error("user already Exists");
+//         } 
+//       })
+//       .catch(err => console.error(`Failed to find document: ${err}`));
     
-    User.create({
-        name,
-        email,
-        password,
-    }).then(result => {
-        console.log(result)
+//     User.create({
+//         name,
+//         email,
+//         password,
+//     }).then(result => {
+         
+//       })
+//       .catch(err => console.error(`Failed to find document: ${err}`));
 
-        if(result) {
-            res.status(200);
-            console.log('hjsad')
-            res.send("hii")
-        } 
-      })
-      .catch(err => console.error(`Failed to find document: ${err}`));
-
-});
+// });
 
 
 

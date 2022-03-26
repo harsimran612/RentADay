@@ -5,7 +5,7 @@ const User = require('../models/userModel');
 const router = require("../routes/userRoutes");
 const generateToken = require('../config/generateToken');
 
-const registerUser = asyncHandler (async(req)=>{
+const registerUser = asyncHandler (async(req,res)=>{
     const {name,email,password} = req.body;
     if(!name || !email ||!password){
         res.status(400);
@@ -29,7 +29,6 @@ const registerUser = asyncHandler (async(req)=>{
             name:user.name,
             email:user.email,
             token:generateToken(user._id),
-
         })
     } else{
         res.status(400);
@@ -41,7 +40,7 @@ const registerUser = asyncHandler (async(req)=>{
 const authUser = asyncHandler(async (req,res)=>{
      const {email,password} = req.body;
      const user = await User.findOne({email});
-     if(user && (await User.matchPassword(password))){
+     if(user && (await user.matchPassword(password))){
         res.json({
             _id:user._id,
             name:user.name,
@@ -50,7 +49,7 @@ const authUser = asyncHandler(async (req,res)=>{
         })
      }else{
         res.status(400);
-        throw new Error("Failed to create new user ")
+        throw new Error("Invalid User ")
     }
 })
 module.exports = {registerUser,authUser};

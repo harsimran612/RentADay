@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import "./Sign.css";
 import "./desktop.css";
 import axios from "axios";
+import {useNavigate} from "react-router-dom";
 
 export default function Auth() {
   const [showPswd, setShowPswd] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  
 
   return (
     <div className="Container--centered fullHeight">
@@ -33,6 +35,7 @@ const UserForm = ({ showPswd, setShowPswd }) => {
   const [email,setEmail] = useState();
   const [password,setPassword] = useState();
   const [confirmPassword,setConfirmPassword] = useState();
+  const navigate = useNavigate();
   const changeVisibility = () => {
     setShowPswd(!showPswd);
   };
@@ -61,18 +64,9 @@ const UserForm = ({ showPswd, setShowPswd }) => {
         },
         config
       );
-      // fetch('http://localhost:8080/api/user', {
-      //   mode: 'no-cors',
-      //   method: 'POST', // or 'PUT'
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      // })
-      // .then(response => response.json())
-      // .then(data => console.log(data));
-      console.log("data");
-      // localStorage.setItem("userInfo", JSON.stringify("data"));
-      // history.push("/home");
+      alert("registration Successful");
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      navigate.push("/home");
     } catch (error) {
       alert("Error Occured!");
     }
