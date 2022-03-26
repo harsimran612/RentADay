@@ -15,7 +15,7 @@ var logger = winston.createLogger({
         new winston.transports.Console(),
         new winston.transports.File({
             name: "AppLogger",
-            filename: path.resolve(path.normalize(path.join(logDir, "app.log"))),
+            filename: path.resolve(path.normalize(path.join(logDir, "backend-app.log"))),
             maxsize: 100000,
       })
     ]

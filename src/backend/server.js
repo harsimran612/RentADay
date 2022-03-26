@@ -29,4 +29,4 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 8080
 app.listen(8080, function(){
   log.info("Server started on PORT:"+PORT)
-  });
+});
