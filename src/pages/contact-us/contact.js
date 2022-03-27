@@ -1,9 +1,23 @@
+import emialjs from 'emailjs-com';
+
 import React from 'react'
 import MobileNav from '../../components/mobile-nav/MobileNav'
 import './contact.css'
 import Logo from "../../images/contact-page-logo.png"
 
 function ContactUs() {
+
+
+    function sendEmail(e) {
+        e.preventDefault();
+
+        emialjs.sendForm('service_kep2asi','template_60o7e5a',e.target,'21cVZLJ1W_ZNlCZHR')
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => console.log(err));
+    }
+
     return (
         <div className="container--xl">
             <MobileNav page="Contact Us" />
@@ -22,27 +36,27 @@ function ContactUs() {
                     </span>
                 </div>
                 <div className="contactUs__box">
-                    <form className='contactUs__form'>
+                    <form className='contactUs__form' onSubmit={sendEmail}>
                         <label className="contactUs__form--label">
                             Name
                         </label>
-                        <input className="contactUs__form--input" type="text" />
+                        <input className="contactUs__form--input" type="text" name="name"/>
                         <label className="contactUs__form--label">
                             Email
                         </label>
-                        <input className="contactUs__form--input" type="email" />
+                        <input className="contactUs__form--input" type="email" name="useremail" />
                         <label className="contactUs__form--label">
                             Subject
                         </label>
-                        <input className="contactUs__form--input" type="text" />
+                        <input className="contactUs__form--input" type="text" name="usersubject"/>
                         <label className="contactUs__form--label">
                             Message
                         </label>
-                        <textarea className="contactUs__form--textarea" type="text" rows='5' />
-                        <span className='contactUs__form--checkbox'>
+                        <textarea className="contactUs__form--textarea" type="text" rows='5' name="themessage"/>
+                        {/* <span className='contactUs__form--checkbox'>
                             <input type='checkbox' />
                             <span>Keep update with notifications</span>
-                        </span>
+                        </span> */}
                         <button className="contactUs__form--button">Submit</button>
                     </form>
                 </div>
