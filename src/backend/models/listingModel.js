@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 
 const listingSchema = mongoose.Schema({
+    siteImg: {type:String, required:true},
     title: {type:String, required:true},
     category: {type:String, required:true},
     condition: {type:String},

@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 
-const connectDB = require("./config/db");
+const connectDB = require("./storage/db");
 const log = require("./log");
 const {notFound,errorHandler} = require('./middlewares/errorMiddleware');
 const appRouter = require("./router");
@@ -25,6 +25,24 @@ app.use(appRouter);
 app.use(notFound);
 app.use(errorHandler);
 
+
+// process.on('unhandledRejection', (reason, promise) => {
+//   console.log(reason)
+// });
+
+// process.on('uncaughtException', (reason) => {
+//   console.log(reason)
+// });
+
+// process.on('SIGTERM', signal => {
+//   console.log(`Process ${process.pid} received a SIGTERM signal`)
+//   process.exit(0)
+// });
+
+// process.on('SIGINT', signal => {
+//   console.log(`Process ${process.pid} has been interrupted`)
+//   process.exit(0)
+// });
 
 const PORT = process.env.PORT || 8080
 app.listen(8080, function(){
