@@ -23,7 +23,19 @@ const addNewListing =  asyncHandler(async (req, res)=>{
 
 
 const getListings = asyncHandler(async (req, res)=>{
-    const listings = await Listing.find({});
+    let searchQuery = {};
+    
+    if(req.query && (req.query.startingPrice || req.query.endingPrice)){
+        let priceFilter = {};
+        if(req.query.startingPrice){
+            priceFilter["$gte"] = req.query.startingPrice;
+        }
+        if(req.query.endingPrice){
+            priceFilter["$lte"] = req.query.endingPrice;
+        }
+        searchQuery["price"] = priceFilter;
+    }
+    const listings = await Listing.find(searchQuery);
     let listingsArray = listings.map(function(listing){
         return listing.toObject()
     });
