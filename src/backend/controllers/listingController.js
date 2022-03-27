@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler");
 
 const Listing = require("../models/listingModel");
 const {uploadFile} = require("../storage/firebase");
+const log = require("../log");
 
 const addNewListing =  asyncHandler(async (req, res)=>{
     uploadFile(req.file, async function(err, downloadUrl){
@@ -21,8 +22,13 @@ const addNewListing =  asyncHandler(async (req, res)=>{
 });
 
 
-const getListings = asyncHandler((req, res)=>{
-
+const getListings = asyncHandler(async (req, res)=>{
+    const listings = await Listing.find({});
+    let listingsArray = listings.map(function(listing){
+        return listing.toObject()
+    });
+    log.info(`Fetched listings = ${listingsArray}`);
+    return res.json({"listings": listingsArray})
 });
 
 module.exports = {addNewListing, getListings};
