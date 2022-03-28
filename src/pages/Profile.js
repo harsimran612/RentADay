@@ -12,9 +12,11 @@ function Profile(){
                     <img src={steve} alt=''></img>
                 </div>
                 <div className='profile_info'>
+                {/* --- To Do: Update User Profile as per signup name--- */}
                     <div className='profile_name'>
                         Ryan Davis
                     </div>
+                {/* --- To Do: Update User Profile --- */}
                     <div className='profile_location'>
                         <p>Vancouver, British Columbia</p>
                     </div>
