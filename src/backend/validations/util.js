@@ -6,7 +6,9 @@ const validationResultsCheck = (req, res, next) => {
         const extractedErrors = []
         errors.array().map(err => extractedErrors.push({ [err.param]: err.msg }))
         return res.status(400).json({
-          errors: extractedErrors,
+          'success': false,
+          'message': "Validation errors",
+          'data': null
         })
     }
     next();
