@@ -63,8 +63,8 @@ export default function NewlyListedPlaceLists() {
 const NewlyListedPlaceCard = ({ placeId, placeTitle, src, description, price }) => {
   return (
     <Link to={`/newly-listed-place/${placeId}`} className="rp__item">
-      <div className="rp_item_body">
-        <div className="rp_item_body--title">
+      <div className="rp__item__body">
+        <div className="rp__item__body--title">
           <h5>{placeTitle}</h5>
           <i className="fa fa-heart-o"></i>
         </div>
@@ -91,7 +91,7 @@ const NewlyListedPlaceCard = ({ placeId, placeTitle, src, description, price }) 
           <span>/day</span>
         </span>
       </div>
-      <div className="rp_item_preview">
+      <div className="rp__item__preview">
         <img
           src={src}
           alt=""
