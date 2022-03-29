@@ -2,14 +2,18 @@ import React from "react";
 import "./DetailedClosestPlace.css";
 import DesktopNav from "../../components/desktop-nav/DesktopNav";
 import MobileNav from "../../components/mobile-nav/MobileNav";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function DetailedClosestPlace() {
   return (
+    <div className='main__page'>
+            <Header />
     <div className="container--xl">
       <MobileNav link="/closest-place" page="Place Title" />
       <DesktopNav
         page1="Listings"
-        page1Link="/pages/home"
+        page1Link="/home"
         page2="Closest Place"
         page2Link="/closest-place"
         title="Place Title"
@@ -106,6 +110,8 @@ export default function DetailedClosestPlace() {
         </div>
       </div>
     </div>
+    <Footer />
+        </div>
   );
 }
 

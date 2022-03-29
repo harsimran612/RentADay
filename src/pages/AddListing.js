@@ -1,6 +1,8 @@
 import React from 'react';
 import './AddListing.css';
 import {useState, useEffect} from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function AddListing(){
     const [images, setImages] = useState([]);
@@ -18,6 +20,8 @@ function AddListing(){
     }
 
     return(
+        <div className='main__page'>
+            <Header />
         <div className='addlisting'>
             <h2>Add Listing Property</h2>
             <div className='addlisting_img'>
@@ -71,6 +75,8 @@ function AddListing(){
 
             <div className='addlisting_button'>
             </div>
+        </div>
+        <Footer />
         </div>
     );
 }

@@ -3,14 +3,18 @@ import "./ClosestPlaceLists.css";
 import DesktopNav from "../../components/desktop-nav/DesktopNav";
 import MobileNav from "../../components/mobile-nav/MobileNav";
 import { Link } from "react-router-dom";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function ClosestPlaceLists() {
   return (
+    <div className='main__page'>
+            <Header />
     <div className="container--lg">
-      <MobileNav link="/pages/home" page="Closest Place" />
+      <MobileNav link="/home" page="Closest Place" />
       <DesktopNav
         page1="Listings"
-        page1Link="/pages/home"
+        page1Link="/home"
         title="Closest Place"
       />
 
@@ -32,6 +36,8 @@ export default function ClosestPlaceLists() {
         />
       </div>
     </div>
+    <Footer />
+        </div>
   );
 }
 

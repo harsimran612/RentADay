@@ -2,10 +2,14 @@ import React from 'react';
 import './Home.css';
 import Banner from '../components/Banner';
 import Card from '../components/Card';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function Home(){
     
     return(
+        <div className='main__page'>
+            <Header />
         <div className='home'>
             
             <Banner />
@@ -32,6 +36,8 @@ function Home(){
                 <a href="../newly-listed-place"><Card src="https://a0.muscache.com/im/pictures/fdb46962-10c1-45fc-a228-d0b055411448.jpg?im_w=720" title="Artistic studio sunlit production" description="Sed vel turpis adispcing penatibus orcineque. Erat sed fermentum ipsum vel" price="$400 / Day"/></a>
             </div>
             <a href="/newly-listed-place">View All</a>
+        </div>
+        <Footer />
         </div>
     )
 }

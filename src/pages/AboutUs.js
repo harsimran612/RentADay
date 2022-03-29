@@ -7,10 +7,14 @@ import Josh from "../images/Joshline Mathew.png";
 import Rahul from "../images/Rahul naranthatta.png";
 import Himani from "../images/Himani gupta.png";
 import Song from "../images/song.png";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 
 function AboutUs(){
     return(
+        <div className='main__page'>
+            <Header />
         <div className="aboutus">
 
             <div className='aboutus-picture'>
@@ -78,6 +82,8 @@ function AboutUs(){
 
             </div>
 
+        </div>
+        <Footer />
         </div>
     );
 

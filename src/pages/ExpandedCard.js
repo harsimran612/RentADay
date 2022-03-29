@@ -3,9 +3,13 @@ import './ExpandedCard.css'
 import image from '../images/Banner.jpeg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Carousel} from'react-bootstrap';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 function ExpandedCard(){
     return(
+        <div className='main__page'>
+            <Header />
         <div className='expandedcard'>
             <div className='expandedcard_image'>
             <Carousel>
@@ -30,6 +34,8 @@ function ExpandedCard(){
             <button>
                 Book this place
             </button>
+        </div>
+        <Footer />
         </div>
     )
 }

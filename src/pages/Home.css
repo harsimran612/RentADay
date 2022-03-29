@@ -7,7 +7,8 @@ h3 {
   padding: 10px;
 }
 .home a {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
   margin-right: 35px;
 }
 

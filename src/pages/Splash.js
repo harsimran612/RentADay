@@ -10,7 +10,7 @@ import splash4 from '../images/splash4.svg';
 function Splash(){
         let navigate = useNavigate(); 
         const routeChange = () =>{ 
-            let path = `../signin`; 
+            let path = `../sign-in`; 
             navigate(path);
     }
   

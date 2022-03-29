@@ -4,6 +4,8 @@ import React from 'react'
 import MobileNav from '../../components/mobile-nav/MobileNav'
 import './contact.css'
 import Logo from "../../images/contact-page-logo.png"
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 function ContactUs() {
 
@@ -19,6 +21,8 @@ function ContactUs() {
     }
 
     return (
+        <div className='main__page'>
+            <Header />
         <div className="container--xl">
             <MobileNav page="Contact Us" />
 
@@ -37,30 +41,32 @@ function ContactUs() {
                 </div>
                 <div className="contactUs__box">
                     <form className='contactUs__form' onSubmit={sendEmail}>
-                        <label className="contactUs__form--label">
+                        <label htmlFor='name' className="contactUs__form--label">
                             Name
                         </label>
                         <input className="contactUs__form--input" type="text" name="name"/>
-                        <label className="contactUs__form--label">
+                        <label htmlFor='email' className="contactUs__form--label">
                             Email
                         </label>
-                        <input className="contactUs__form--input" type="email" name="useremail" />
-                        <label className="contactUs__form--label">
+                        <input className="contactUs__form--input" type="email" name="email" />
+                        <label htmlFor='subject' className="contactUs__form--label">
                             Subject
                         </label>
-                        <input className="contactUs__form--input" type="text" name="usersubject"/>
-                        <label className="contactUs__form--label">
+                        <input className="contactUs__form--input" type="text" name="subject"/>
+                        <label htmlFor='message' className="contactUs__form--label">
                             Message
                         </label>
-                        <textarea className="contactUs__form--textarea" type="text" rows='5' name="themessage"/>
+                        <textarea className="contactUs__form--textarea" type="text" rows='5' id="message"/>
                         {/* <span className='contactUs__form--checkbox'>
                             <input type='checkbox' />
                             <span>Keep update with notifications</span>
                         </span> */}
-                        <button className="contactUs__form--button">Submit</button>
+                        <button type='submit' className="contactUs__form--button">Submit</button>
                     </form>
                 </div>
             </div>
+        </div>
+        <Footer />
         </div>
     )
 }

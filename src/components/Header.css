@@ -1,22 +1,23 @@
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   position: sticky;
   top: 0;
   align-items: center;
   z-index: 100;
-  width: 100%;
   background-color: white;
-}
-.header_icon {
-  width: 50%;
-  margin-left: 40px;
+  margin: 0 10px;
 }
 .header_center {
   display: flex;
 }
-.header_center > * {
+.header_nav {
+  display: flex;
+  align-items: center;
+}
+.header_nav > * {
   padding: 20px;
+  white-space: nowrap;
 }
 /* Image-logo */
 .image-logo {
@@ -31,6 +32,12 @@
 .header a {
   text-decoration: none;
   color: #2a4b3d;
+}
+.home_auth_nav {
+  padding: 20px;
+}
+.home_auth_nav a:last-child {
+  font-weight: bold;
 }
 .profile-button {
   /* background-color: #2a4b3d; RentADay Green */
@@ -51,6 +58,9 @@
   width: 40px;
   object-fit: cover;
 }
+.profile-button a {
+  text-transform: capitalize;
+}
 
 .button_nav:hover {
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
@@ -58,10 +68,18 @@
 }
 
 @media screen and (max-width: 700px) {
-  .Home_Listing_Nav,
-  .Home_Search_Nav,
-  .Home_Setting_Nav,
-  .Home_Search_Nav {
+  .header {
     display: none;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .header_nav {
+    display: none;
+  }
+}
+@media screen and (max-width: 875px) {
+  .header_nav > * {
+    padding: 20px 10px;
   }
 }

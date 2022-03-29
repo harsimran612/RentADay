@@ -1,10 +1,10 @@
-h1 {
+.banner h1 {
   display: none;
 }
 .banner_search {
   padding: 20px;
   text-align: center;
-  background-image: url("../images/Banner.jpeg");
+  background-image: url('../images/Banner.jpeg');
   background-size: cover;
 }
 .banner_search .location,
@@ -48,7 +48,7 @@ h1 {
     color: white;
   }
   .banner {
-    background: url("../images/Banner.jpeg");
+    background: url('../images/Banner.jpeg');
     height: 70vh;
     position: relative;
     background-size: cover;

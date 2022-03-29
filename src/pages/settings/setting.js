@@ -3,9 +3,13 @@ import Accordion from '../../components/Accordion/accordion';
 import DesktopNav from '../../components/desktop-nav/DesktopNav';
 import MobileNav from "../../components/mobile-nav/MobileNav";
 import "./setting.css";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 function Setting() {
     return (
+        <div className='main__page'>
+            <Header />
         <div className="container--xl">
             <MobileNav page="Setting" />
 
@@ -22,6 +26,8 @@ function Setting() {
                     </Accordion>
                 </div>
             </div>
+        </div>
+        <Footer />
         </div>
     )
 }

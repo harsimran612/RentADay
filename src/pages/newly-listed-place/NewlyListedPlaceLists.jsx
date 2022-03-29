@@ -2,9 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DesktopNav from "../../components/desktop-nav/DesktopNav";
 import MobileNav from "../../components/mobile-nav/MobileNav";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function NewlyListedPlaceLists() {
   return (
+    <div className='main__page'>
+            <Header />
     <div className="rp__container--xl">
       <MobileNav link="/home" page="Recommended Place" />
       <DesktopNav
@@ -46,6 +50,8 @@ export default function NewlyListedPlaceLists() {
         </div>
       </div>
     </div>
+    <Footer />
+        </div>
   );
 }
 

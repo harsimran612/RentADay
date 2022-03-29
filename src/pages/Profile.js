@@ -2,9 +2,15 @@ import React from 'react';
 import './Profile.css';
 import images from '../images/Banner.jpeg';
 import steve from '../images/Steve.jpeg';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import { useAuth } from "../context/userContext"
 
 function Profile(){
+    const {user} = useAuth();
     return(
+        <div className='main__page'>
+            <Header />
         <div className='profile'>
             <h2>Profile</h2>
             <div className='profile_1'>
@@ -14,7 +20,7 @@ function Profile(){
                 <div className='profile_info'>
                 {/* --- To Do: Update User Profile as per signup name--- */}
                     <div className='profile_name'>
-                        Ryan Davis
+                        {user?.name}
                     </div>
                 {/* --- To Do: Update User Profile --- */}
                     <div className='profile_location'>
@@ -40,7 +46,8 @@ function Profile(){
             </div>
         
         </div>
-
+        <Footer />
+        </div>
     )
 }
 

@@ -2,9 +2,14 @@
   background-color: #f0ebda;
   padding: 30px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+.footer p {
+  margin: 0;
 }
 a {
   color: black;

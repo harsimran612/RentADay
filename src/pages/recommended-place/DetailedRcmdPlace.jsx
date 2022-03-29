@@ -2,14 +2,18 @@ import React from "react";
 import "./DetailedRcmdPlace.css";
 import DesktopNav from "../../components/desktop-nav/DesktopNav";
 import MobileNav from "../../components/mobile-nav/MobileNav";
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function DetailedRecommendedPlace() {
   return (
+    <div className='main__page'>
+            <Header />
     <div className="container--xl">
       <MobileNav link="/closest-place" page="Place Title" />
       <DesktopNav
         page1="Listings"
-        page1Link="/pages/home"
+        page1Link="/home"
         page2="Recommended Place"
         page2Link="/recommended-place"
         title="Place Title"
@@ -109,6 +113,8 @@ export default function DetailedRecommendedPlace() {
         </div>
       </div>
     </div>
+    <Footer />
+        </div>
   );
 }
 
