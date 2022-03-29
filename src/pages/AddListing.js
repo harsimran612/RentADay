@@ -34,7 +34,7 @@ function AddListing(){
             </div>
 
             <div className='addlisting_form'>
-                <form>
+                <form action='POST' encType=''>
                     <label>
                         Title
                         <input type="text" id="title" name="title" placeholder="Create a title for your property"></input>

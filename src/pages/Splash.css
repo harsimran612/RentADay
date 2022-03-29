@@ -55,7 +55,7 @@
   font-weight: 500px;
   line-height: 18.15px;
   position: relative;
-  top: 70px;
+  top: 140px;
 }
 .splash-features > * {
   margin-top: 30px;
@@ -80,8 +80,16 @@
   cursor: pointer;
   color: black;
   position: relative;
-  top: 90px;
+  top: 150px;
   border-radius: 50px;
+}
+.line {
+  background-color: white;
+  height: 2px;
+  padding: 0;
+  position: relative;
+  margin: 0px 50px 0px 50px;
+  top: 90px;
 }
 @media screen and (min-width: 928px) {
   .splash-features {
@@ -104,5 +112,8 @@
   .splashlogo {
     width: 100px;
     height: 100px;
+  }
+  .line {
+    margin: 0px 250px 0px 250px;
   }
 }
