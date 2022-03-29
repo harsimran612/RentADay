@@ -12,6 +12,7 @@ h1 {
 .guest {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.4);
+  color: white;
 }
 .banner_search button {
   border: none;

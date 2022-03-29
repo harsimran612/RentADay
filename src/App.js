@@ -32,14 +32,14 @@ function App() {
         <Header />
         <Routes>
               <Route path="/" element={<Splash/>}/>
-              <Route path="/SignIn" element={<SignIn/>}/>
-              <Route path="/SignUp" element={<SignUp/>}/>
-              <Route path="pages/Home" element={<Home/>}/>
-              <Route path="pages/search" element={<SearchPage/>}/>
-              <Route path="pages/aboutus" element={<AboutUs/>}/>
-              <Route path="pages/profile" element={<Profile/>}/>
-              <Route path="pages/profile/:username" element={<Profile/>}/>
-              <Route path="pages/expandedcard" element={<ExpandedCard/>}/>
+              <Route path="/signIn" element={<SignIn/>}/>
+              <Route path="/signUp" element={<SignUp/>}/>
+              <Route path="/home" element={<Home/>}/>
+              <Route path="/search" element={<SearchPage/>}/>
+              <Route path="/aboutus" element={<AboutUs/>}/>
+              <Route path="/profile" element={<Profile/>}/>
+              <Route path="/profile/:username" element={<Profile/>}/>
+              <Route path="/expandedcard" element={<ExpandedCard/>}/>
               <Route path="addlisting" element={<AddListing/>}/>
             
               <Route path="/closest-place" element={<ClosestPlaceLists />} />

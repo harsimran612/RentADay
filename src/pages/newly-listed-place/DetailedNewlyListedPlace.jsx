@@ -8,7 +8,7 @@ export default function DetailedNewlyListedPlace() {
       <MobileNav link="/closest-place" page="Place Title" />
       <DesktopNav
         page1="Listings"
-        page1Link="/pages/home"
+        page1Link="/home"
         page2="Newly Listed Place"
         page2Link="/newly-listed-place"
         title="Place Title"
