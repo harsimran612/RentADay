@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Sign.css";
 import "./desktop.css";
+import axios from "axios";
+
 
 export default function Auth() {
   const [showPswd, setShowPswd] = useState(false);
@@ -26,21 +28,54 @@ export default function Auth() {
 }
 
 const UserForm = ({ showPswd, setShowPswd }) => {
+  const [email,setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [loading,setLoading] = useState(false);
+  const navigate = useNavigate();
   const changeVisibility = () => {
     setShowPswd(!showPswd);
   };
+  const submitLogin = async () =>{
+    setLoading(true);
+    if (!email || !password) {
+      alert("Please Fill all the Feilds" );
+      setLoading(false);
+      return;
+    }
+    try {
+      const config = {
+        headers: {
+          "Content-type": "application/json",
+        },
+      };
+
+      const { data } = await axios.post(
+        "http://localhost:8080/api/user/login",
+        { email, password },
+        config
+      );
+      alert("Login Successful");
+      localStorage.setItem("userInfo", JSON.stringify(data));
+      setLoading(false);
+      navigate.push("/home");
+    } catch (error) {
+      alert("Error Occured!");
+      setLoading(false);
+    }
+    
+  }
   return (
     <>
       <form className="Auth__formItems">
         <div className="Auth__formItem">
           <label for="name">User Email</label>
-          <input type="text" id="name" name="name" />
+          <input type="email" id="email" name="name" onChange={(e)=>setEmail(e.target.value)}/>
         </div>
 
         <div className="Auth__formItem">
           <label for="password">Password</label>
           <div name="password" className="Auth__formItem--password">
-            <input type={`${showPswd ? "text" : "password"}`} id="name" />
+            <input type={`${showPswd ? "text" : "password"}`} id="name" onChange={(e)=>setPassword(e.target.value)}/>
             <i
               className={`fas ${showPswd ? "fa-eye" : "fa-eye-slash"}`}
               onClick={changeVisibility}
@@ -48,7 +83,7 @@ const UserForm = ({ showPswd, setShowPswd }) => {
           </div>
         </div>
 
-        <input type="submit" className="Auth__submitButton" value="Sign In" />
+        <input type="submit" className="Auth__submitButton" value="Sign In" onClick={submitLogin} />
       </form>
 
       <div className="Auth--nav">
