@@ -68,7 +68,7 @@ export default function DetailedNewlyListedPlace() {
               </div>
               <div className="PlaceDetails__table--row">
                 <h5>Features</h5>
-                <p>Features hi features hai.</p>
+                <p>Features lists</p>
               </div>
               <div className="PlaceDetails__table--row">
                 <h5>Amenities</h5>
