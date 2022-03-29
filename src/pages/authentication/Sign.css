@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   overflow-y: auto;
+  background: none;
 }
 
 .fullHeight {
@@ -19,6 +20,7 @@
   user-select: none;
   padding-bottom: 10px;
   background-color: transparent;
+  box-shadow: none;
 }
 
 .Auth__heading {
