@@ -3,8 +3,16 @@ import DesktopNav from "../../components/desktop-nav/DesktopNav";
 import MobileNav from "../../components/mobile-nav/MobileNav";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import {
+  useParams
+} from "react-router-dom";
 
 export default function DetailedNewlyListedPlace() {
+  let {placeId} = useParams();
+
+  React.useEffect(() => {
+    console.log(placeId);
+  }, [placeId]);
   return (
     <div className='main__page'>
             <Header />
@@ -160,13 +168,13 @@ const LocationMap = () => {
     <div className="mapouter">
       <iframe
         title="map"
-        class="gmap_iframe"
+        className="gmap_iframe"
         width="100%"
         height="500px"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
-        marginheight="0"
-        marginwidth="0"
+        marginHeight="0"
+        marginWidth="0"
         src="https://maps.google.com/maps?width=1000&amp;height=500&amp;hl=en&amp;q=canada&amp;t=&amp;z=3&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       ></iframe>
     </div>
@@ -186,11 +194,11 @@ const Review = () => {
             <span>Octover 22, 2022</span>
           </div>
           <div className="reviewCard__body--header--rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fa fa-star-o"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fa fa-star-o"></i>
           </div>
         </div>
 

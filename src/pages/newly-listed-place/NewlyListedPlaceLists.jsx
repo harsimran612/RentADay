@@ -6,99 +6,94 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 export default function NewlyListedPlaceLists() {
-  return (
-    <div className='main__page'>
-            <Header />
-    <div className="rp__container--xl">
-      <MobileNav link="/home" page="Recommended Place" />
-      <DesktopNav
-        page1="Listings"
-        page1Link="/home"
-        title="Newly Listed Place"
-      />
+  const [newlyListed, setNewlyListed] = React.useState([]);
 
-      <div className="rp__container">
-        <div className="RcmdPlace__items">
-          <NewlyListedPlaceCard
-            placeId={56283654235}
-            placeTitle="Item Title 1"
-            distance={500}
-          />
-          <NewlyListedPlaceCard
-            placeId={56283654235}
-            placeTitle="Item Title 2"
-            distance={200}
-          />
-          <NewlyListedPlaceCard
-            placeId={56283654235}
-            placeTitle="Item Title 3"
-            distance={400}
-          />
-        </div>
-        <div className="RcmdPlace__map">
-          <iframe
-            title="map"
-            class="gmap_iframe"
-            width="100%"
-            height="800px"
-            frameborder="0"
-            scrolling="no"
-            marginheight="0"
-            marginwidth="0"
-            src="https://maps.google.com/maps?width=1000&amp;height=500&amp;hl=en&amp;q=canada&amp;t=&amp;z=3&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-          ></iframe>
+  React.useEffect(() => {
+    fetch("http://localhost:8080/api/listing/all")
+      .then((res) => res.json())
+      .then((data) => {
+        setNewlyListed(data.listings);
+      });
+  }, []);
+
+  return (
+    <div className="main__page">
+      <Header />
+      <div className="rp__container--xl">
+        <MobileNav link="/home" page="Recommended Place" />
+        <DesktopNav
+          page1="Listings"
+          page1Link="/home"
+          title="Newly Listed Place"
+        />
+
+        <div className="rp__container">
+          <div className="RcmdPlace__items">
+            {newlyListed.reverse().map((place) => (
+              <NewlyListedPlaceCard
+                key={place._id}
+                placeId={place._id}
+                placeTitle={place.title}
+                src={place.siteImg}
+                description={place.description}
+                price={place.price}
+              />
+            ))}
+          </div>
+          <div className="RcmdPlace__map">
+            <iframe
+              title="map"
+              className="gmap_iframe"
+              width="100%"
+              height="800px"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight="0"
+              marginWidth="0"
+              src="https://maps.google.com/maps?width=1000&amp;height=500&amp;hl=en&amp;q=canada&amp;t=&amp;z=3&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+            ></iframe>
+          </div>
         </div>
       </div>
+      <Footer />
     </div>
-    <Footer />
-        </div>
   );
 }
 
-const NewlyListedPlaceCard = ({ placeId, placeTitle, distance }) => {
+const NewlyListedPlaceCard = ({ placeId, placeTitle, src, description, price }) => {
   return (
     <Link to={`/newly-listed-place/${placeId}`} className="rp__item">
-      <div className="rp__item__body">
-        <div className="rp__item__body--title">
+      <div className="rp_item_body">
+        <div className="rp_item_body--title">
           <h5>{placeTitle}</h5>
           <i className="fa fa-heart-o"></i>
         </div>
-        <h6>Item Category - item condition</h6>
+        <h6>{placeTitle}</h6>
         <h6>Description</h6>
         <p>
-          Ipsam dolore qui. Impedit quia deleniti quia ducimus itaque. A eius
-          illo minus amet fuga. Quos qui occaecati voluptates. Ipsam dolore qui.
-          Impedit quia deleniti quia ducimus itaque. A eius illo minus amet
-          fuga. Quos qui occaecati voluptates. Ipsam dolore qui. Impedit quia
-          deleniti quia ducimus itaque. A eius illo minus amet fuga. Quos qui
-          occaecati voluptates. Ipsam dolore qui. Impedit quia deleniti quia
-          ducimus itaque. A eius illo minus amet fuga. Quos qui occaecati
-          voluptates. Ipsam dolore qui. Impedit quia deleniti quia ducimus
-          itaque. A eius illo minus amet fuga. Quos qui occaecati voluptates.
-          Ipsam dolore qui. Impedit quia deleniti quia ducimus itaque. A eius
-          illo minus amet fuga. Quos qui occaecati voluptates.
+          {description}
         </p>
         <span className="m-away">
-          {distance} m away <i className="fa fa-map-marker"></i>
+          500 m away <i className="fa fa-map-marker"></i>
         </span>
         <span className="rp__rating">
           <span>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fa fa-star-o"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fa fa-star-o"></i>
           </span>
           <span>(10 reviews)</span>
         </span>
         <span className="rp__dayPrice">
-          <span>$150 CAD</span>
+          <span>{price}</span>
           <span>/day</span>
         </span>
       </div>
-      <div className="rp__item__preview">
+      <div className="rp_item_preview">
         <img
-          src="https://images.pexels.com/photos/3935333/pexels-photo-3935333.jpeg?cs=srgb&dl=pexels-curtis-adams-3935333.jpg&fm=jpg"
+          src={src}
           alt=""
           width="100%"
         />
