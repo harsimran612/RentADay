@@ -17,11 +17,7 @@ function Header(){
                 <div className="Home_Listing_Nav">
                     <a href="./home" >Listings</a>
                 </div>
-
-                <div className="Home_Search_Nav">
-                    <a href="./home" >Notification</a>
-                </div>
-                    
+                
                 <div className="Home_Setting_Nav">
                     <a href="/settings" >Settings</a>
                 </div>
@@ -29,13 +25,11 @@ function Header(){
                 <div className="Home_Setting_Nav">
                     <a href="/contact-us" >Contact Us</a>
                 </div>
-
-                <div className="Home_Search_Nav">
-                    <a href="./home" >Reviews</a>
-                </div>
+                
                 <div className="profile-button">
                     <img src={Userphoto} alt=""></img>
                     <NavDropdown title="Ryan Davis" id="basic-nav-dropdown">
+                        <NavDropdown.Item href={"../AddListing"}>Add New Listing</NavDropdown.Item>
                         <NavDropdown.Item href={"../profile"}>Profile</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Payment</NavDropdown.Item>
                         <NavDropdown.Divider />

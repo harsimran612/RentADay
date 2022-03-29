@@ -11,18 +11,23 @@ function Banner(){
             </div>
 
             <div className='banner_search'>
+            {/* 
                 <div className='location'>
                     <input type="text" name="location" placeholder='Location'></input>
                 </div>
+            */}
 
                 <div className='price'>
-                    <input type="number" name="price" placeholder='Price'></input>
+                <label>
+                    Price
+                    <input type="number" name="price"></input>
+                </label>
                 </div>
-
+            {/* 
                 <div className='guest'>
                     <input type="number" name="guest" placeholder='Guest'></input>
                 </div>
-
+            */}
                 <div className='button'>
                     <button onClick={()=>{
                         navigate('../newly-listed-place');

@@ -32,9 +32,9 @@ function App() {
         <Header />
         <Routes>
               <Route path="/" element={<Splash/>}/>
-              <Route path="/SignIn" element={<SignIn/>}/>
-              <Route path="/SignUp" element={<SignUp/>}/>
-              <Route path="/Home" element={<Home/>}/>
+              <Route path="/signIn" element={<SignIn/>}/>
+              <Route path="/signUp" element={<SignUp/>}/>
+              <Route path="/home" element={<Home/>}/>
               <Route path="/search" element={<SearchPage/>}/>
               <Route path="/aboutus" element={<AboutUs/>}/>
               <Route path="/profile" element={<Profile/>}/>
