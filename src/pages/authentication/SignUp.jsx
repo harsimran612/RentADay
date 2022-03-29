@@ -8,6 +8,15 @@ import { useAuth } from "../../context/userContext";
 
 export default function Auth() {
   const [showPswd, setShowPswd] = useState(false);
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (user) {
+      navigate("/home");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="Container--centered fullHeight">
