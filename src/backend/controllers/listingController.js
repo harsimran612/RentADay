@@ -4,19 +4,34 @@ const Listing = require("../models/listingModel");
 const {uploadFile} = require("../storage/firebase");
 const log = require("../log");
 
-const addNewListing =  asyncHandler(async (req, res)=>{
+const addNewListing = asyncHandler(async (req, res) => {
     uploadFile(req.file, async function(err, downloadUrl){
-        if(err){
-            return res.status(500).json({"msg": err.toString()})
+        if (err) {
+            return res.status(500).json({
+                'success': false,
+                'message': "Something went wrong!",
+                'data': null
+            })
         }
         req.body.siteImg = downloadUrl;
         const listing = await Listing.create(req.body);
         if(listing){
+            // return res.json({
+            //     _id: listing._id
+            // });
             return res.json({
-                _id: listing._id
-            });
+                'success': true,
+                'message': 'Listing added successfully',
+                'data': {
+                    '_id': listing._id
+                }
+            })
         }
-        throw new Error("Failed to create new listing");
+        return res.status(400).json({
+            'success': false,
+            'message': 'Failed to add new listing',
+            'data': null
+        })
     });
     
 });
