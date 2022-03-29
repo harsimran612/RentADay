@@ -18,7 +18,8 @@ module.exports = {
         storageBucket: STORAGE_BUCKET,
         messagingSenderId: MESSAGING_SENDER_ID,
         appId: APP_ID,
-        measurementId: MEASUREMENT_ID
+        measurementId: MEASUREMENT_ID,
+        bucketUrl: "gs://rentaday-fb3f9.appspot.com"
     },
     mongoConfig:{
         "connectionUri": "mongodb+srv://jeriljames:jeriljames@first-cluster.mis1q.mongodb.net/RentADay?retryWrites=true&w=majority"
