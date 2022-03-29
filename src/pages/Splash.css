@@ -23,7 +23,7 @@
     url(../images/Banner.jpeg);
 
   background-size: cover;
-  width: 100vw;
+  /*width: 100vw;*/
   height: 100vh;
   color: white;
 }

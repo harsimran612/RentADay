@@ -68,16 +68,12 @@ function App() {
 
       {/* snackbar components  */}
       <Snackbar open={SnackbarInfo.open} autoHideDuration={SnackbarInfo.duration} onClose={closeSnackbar}>
-        <Alert severity={SnackbarInfo.type}>
+        <MuiAlert elevation={6} variant="filled" severity={SnackbarInfo.type ? SnackbarInfo.type : 'success'}>
           {SnackbarInfo.message}
-        </Alert>
+        </MuiAlert>
       </Snackbar>
       </>
   );
-}
-
-function Alert(props) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
 export default App;

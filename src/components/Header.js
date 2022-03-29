@@ -5,10 +5,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {NavDropdown} from'react-bootstrap';
 //import Userphoto from '../images/Steve.jpeg';
 import { useAuth } from "../context/userContext"
+import { useNavigate } from "react-router-dom";
+import { useUtils } from "../context/utilsContext";
 
 
 function Header(){
-    const {user} = useAuth();
+    const { user, setUser } = useAuth();
+    const navigate = useNavigate();
+    const { handlerSnackbar } = useUtils();
+    
+    const logOutHandler = () => {
+        localStorage.removeItem('rent-a-day-user');
+        setUser(null);
+        navigate('/');
+        handlerSnackbar({ message: "Logout successfull!", type: "success", duration: 2000 });
+    }
 
     return(
         <div className='header'>
@@ -40,7 +51,7 @@ function Header(){
                             <NavDropdown.Item href="#action/3.2">Payment</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Newsletter</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
+                            <NavDropdown.Item href="#" onClick={logOutHandler}>Logout</NavDropdown.Item>
                         </NavDropdown>
                     </div> : 
                     <>

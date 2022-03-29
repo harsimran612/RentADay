@@ -1,5 +1,5 @@
 import React from "react";
-import "./DetailedRcmdPlace.css";
+import "../closest-place/DetailedClosestPlace.css";
 import DesktopNav from "../../components/desktop-nav/DesktopNav";
 import MobileNav from "../../components/mobile-nav/MobileNav";
 import Header from '../../components/Header';

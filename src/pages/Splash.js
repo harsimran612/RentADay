@@ -26,13 +26,13 @@ function Splash(){
             </div>
             <div className='splash-mainbody'>
                 <div className='splash-intro'>
-                    Begin your special one-day journey with <span class="rentaday">Rent A Day</span>
+                    Begin your special one-day journey with <span className="rentaday">Rent A Day</span>
                 </div>
                 
                 <div className='splash-intro1'>
                     Start your journey with easy space rental app for one day. It's specialized in a daytime event or impromptu meeting.
                 </div>
-                <div class="line"></div>
+                <div className="line"></div>
                 <div className='splash-features'>
                     <div className='splash-features1'>
                         <img className="splashlogo" src={splash1} alt=""/>
