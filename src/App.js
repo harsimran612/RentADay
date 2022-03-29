@@ -29,6 +29,8 @@ function App() {
 
     <div className="app">
       <Router>
+        
+        
         <Header />
         <Routes>
               <Route path="/" element={<Splash/>}/>
