@@ -21,23 +21,7 @@ export default function DetailedRecommendedPlace() {
 
       {/* photo grid  */}
       <div className="Images__container">
-        <div className="placeImages--grid">
-          <div className="gridImage1">
-            <img
-              src="https://images.pexels.com/photos/1475938/pexels-photo-1475938.jpeg?cs=srgb&dl=pexels-eziz-charyyev-1475938.jpg&fm=jpg"
-              alt="place"
-            />
-          </div>
-
           <img src="https://images.pexels.com/photos/5178055/pexels-photo-5178055.jpeg?cs=srgb&dl=pexels-curtis-adams-5178055.jpg&fm=jpg" alt="place" />
-          <img src="https://images.pexels.com/photos/5178055/pexels-photo-5178055.jpeg?cs=srgb&dl=pexels-curtis-adams-5178055.jpg&fm=jpg" alt="place" />
-          <img src="https://images.pexels.com/photos/5178055/pexels-photo-5178055.jpeg?cs=srgb&dl=pexels-curtis-adams-5178055.jpg&fm=jpg" alt="place" />
-          <img src="https://images.pexels.com/photos/5178055/pexels-photo-5178055.jpeg?cs=srgb&dl=pexels-curtis-adams-5178055.jpg&fm=jpg" alt="place" />
-        </div>
-
-        <div className="placeImages--button">
-          <button className="btn btn-secondary btn-sm">View All Photos</button>
-        </div>
       </div>
 
       {/* place details */}
@@ -99,18 +83,6 @@ export default function DetailedRecommendedPlace() {
           <LocationMap />
         </div>
         <hr />
-        <div className="PlaceDetails__reviews">
-          <h6 className="PlaceDetails__reviews--title">
-            Reviews (345 Reviews)
-          </h6>
-          <div className="PlaceDetails__reviews--container">
-            <Review />
-            <Review />
-            <Review />
-            <Review />
-            <Review />
-          </div>
-        </div>
       </div>
     </div>
     <Footer />
@@ -164,49 +136,15 @@ const LocationMap = () => {
     <div className="mapouter">
       <iframe
         title="map"
-        class="gmap_iframe"
+        className="gmap_iframe"
         width="100%"
         height="500px"
-        frameborder="0"
+        frameBorder="0"
         scrolling="no"
-        marginheight="0"
-        marginwidth="0"
+        marginHeight="0"
+        marginWidth="0"
         src="https://maps.google.com/maps?width=1000&amp;height=500&amp;hl=en&amp;q=canada&amp;t=&amp;z=3&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
       ></iframe>
-    </div>
-  );
-};
-
-const Review = () => {
-  return (
-    <div className="reviewCard">
-      <div className="reviewCard__user">
-        <img src="https://picsum.photos/id/38/55/55" alt="" />
-        <span>David Jones</span>
-      </div>
-      <div className="reviewCard__body">
-        <div className="reviewCard__body--header">
-          <div className="reviewCard__body--header--date">
-            <span>Octover 22, 2022</span>
-          </div>
-          <div className="reviewCard__body--header--rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fa fa-star-o"></i>
-          </div>
-        </div>
-
-        <p>
-          Rerum qui qui odit eos. Sit reprehenderit consequatur voluptatibus.
-          Animi ratione maiores error et soluta voluptatem. Eos ullam aliquid
-          vel facere ut. Deserunt voluptatum qui omnis. Omnis itaque et quia
-          maxime quasi. Aut magni fuga itaque iure illo error. Eaque aperiam
-          blanditiis quia. Deserunt vero voluptatem sit itaque. Harum beatae
-          voluptatibus quia quis aut corrupti a ex impedit.
-        </p>
-      </div>
     </div>
   );
 };

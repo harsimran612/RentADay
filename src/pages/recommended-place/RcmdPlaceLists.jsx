@@ -39,13 +39,13 @@ export default function RecommendedPlaceLists() {
         <div className="RcmdPlace__map">
           <iframe
             title="map"
-            class="gmap_iframe"
+            className="gmap_iframe"
             width="100%"
             height="800px"
-            frameborder="0"
+            frameBorder="0"
             scrolling="no"
-            marginheight="0"
-            marginwidth="0"
+            marginHeight="0"
+            marginWidth="0"
             src="https://maps.google.com/maps?width=1000&amp;height=500&amp;hl=en&amp;q=canada&amp;t=&amp;z=5&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
           ></iframe>
         </div>
@@ -84,11 +84,11 @@ const RecommendedPlaceCard = ({ placeId, placeTitle, distance }) => {
         </span>
         <span className="rp__rating">
           <span>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fa fa-star-o"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fas fa-star"></i>
+            <i className="fa fa-star-o"></i>
           </span>
           <span>(10 reviews)</span>
         </span>
