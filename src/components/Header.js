@@ -31,7 +31,7 @@ function Header(){
                     <NavDropdown title="Ryan Davis" id="basic-nav-dropdown">
                         <NavDropdown.Item href={"../AddListing"}>Add New Listing</NavDropdown.Item>
                         <NavDropdown.Item href={"../profile"}>Profile</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Payment</NavDropdown.Item>
+                        <NavDropdown.Item href={"../payment"}>Payment</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
                     </NavDropdown>
