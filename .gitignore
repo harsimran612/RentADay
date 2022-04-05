@@ -12,9 +12,11 @@
 /build
 
 #backend
-/src/backend/node_modules
-src/backend/logs/
+/node_modules
+/logs/
 /logs
+/frontend/node_modules
+.github
 
 # misc
 .DS_Store
