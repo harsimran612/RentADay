@@ -9,13 +9,13 @@
 /coverage
 
 # production
-/build
+/frontend
 
 #backend
 /node_modules
 /logs/
 /logs
-/frontend/node_modules
+
 .github
 
 # misc

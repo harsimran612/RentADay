@@ -7,6 +7,7 @@ const {notFound,errorHandler} = require('./middlewares/errorMiddleware');
 const appRouter = require("./router");
 
 var cors = require('cors');
+const path = require("path")
 
 dotenv.config();
 connectDB();
@@ -26,10 +27,10 @@ app.use(notFound);
 app.use(errorHandler);
 
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, './frontend/build')))
+app.use(express.static(path.join(__dirname, 'build')))
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname + './frontend/build', 'index.html'))
+  res.sendFile(path.join(__dirname + 'build', 'index.html'))
 })
 
 
