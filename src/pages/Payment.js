@@ -11,52 +11,69 @@ const Payment = props => {
     <div className="payment">
         {/* <Header /> */}
 
-        <div>
-            <div>
-                <ul>
-                    <li><a href="#">Payment</a></li>
+        <div className="payment-card">
+            <div className="payment-nav">
+                <ul className="mx-auto">
+                    <li class="active"><a href="#">Payment</a></li>
                 </ul>
             </div>
         </div>
 
         <form className="payment-form">
-            <p>Saved Cards:</p>
+            
 
-            <div>
-                <div>
-                    <img src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="" />
-                </div>
-                <div>
-                    <input type="text" placeholder="**** **** **** 3193"/>
-                    <div className="card1"> 
+            <div className="card-row">
+                <p>Saved Cards:</p>
+                <div className="card1">
+                    <div>
+                        <img class="img-fluid" src="https://img.icons8.com/color/48/000000/mastercard-logo.png" alt="" />
+                    </div>
+
+                    <div>
+                        <input type="text" placeholder="**** **** **** 3193"/>
+                    </div>
+                    <div> 
                         <a href="#">Remove Card</a>
+                    </div>
+                </div>
+
+                <div className="card-row2">
+
+                    <div className="card2">
+                        <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" alt="" />
+                    </div>
+                    <div className="card2"> 
+                        <input type="text" placeholder="**** **** **** 4296"/> 
+                    </div>
+                    <div className="card2"> 
+                        <a href="#">Remove card</a> 
                     </div>
                 </div>
 
                 <p>Add New Card:</p>
 
-                <div>
+                <div className="card-head">
 
-                    <div>
-                        <div>
+                    <div className="Addcard">
+                        <div className="Addcard1">
                             <input type="text" placeholder="Card name" />
                         </div>
                     </div>
 
-                    <div>
+                    <div className="Addcard2">
                         <div>
                             <div>
-                                <div>
+                                <div className="card2Place">
                                     <input type="text" placeholder="Card number" />
                                 </div>
                             </div>
                         </div>
 
-                        <div>
+                        <div className="card2Place">
                             <input type="text" placeholder="Exp. date"/>
                         </div>
 
-                        <div>
+                        <div className="card2Place">
                             <input type="text" placeholder="CVV" />
                         </div>
 

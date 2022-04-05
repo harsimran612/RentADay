@@ -1,0 +1,162 @@
+.payment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-card {
+    margin: 20px;
+  }
+  .payment-card input {
+    padding: 10px;
+  }
+  .payment-nav ul {
+    text-align: center;
+    list-style: none;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .card-row {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .card-row .card1 ::placeholder {
+    color: lightslategray;
+    font-weight: 800;
+  }
+  .Addcard {
+    margin: 7px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+  }
+  .Addcard2 {
+      margin: 7px;
+      display: flex;
+      flex-direction: row;
+      color: lightslategray;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+  }
+  .Addcard ::placeholder {
+    color: lightslategray;
+    font-weight: 800;
+  }
+  .card-head {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+  }
+  .Cardnumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Cardnumber ::placeholder {
+    color: lightslategray;
+    font-weight: 800;
+  }
+  .Cardnumber > * {
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: aliceblue;
+    margin-top: 10px;
+  }
+  .payment-form .btn {
+    background-color: #2a4b3d;
+    justify-content: center;
+    width: 90%;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    color: white;
+  }
+
+  .card1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .card1 img {
+    float: right;
+  }
+  .card1 a {
+    float: right;
+    margin-right: 10px;
+    color: gray;
+    font-weight: 800;
+  }
+  .card-row2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .card2{
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+  }
+  p {
+    color: lightslategray;
+    font-weight: 1000; 
+  }
+  .card2 input::placeholder {
+    color: lightslategray;
+    font-weight: 1000;
+  }
+  .card2 a {
+    color: lightslategray;
+    font-weight: 1000;
+  }
+
+  .card2Place input::placeholder {
+    color: lightslategray;
+    font-weight: 1000;
+  }
+  button {
+    color: white;
+    background-color: #2b3616;
+    font-weight: 500;
+    border-radius: 5px;
+    margin: 20px;
+  }
+  @media screen and (min-width: 928px) {
+    .card-row {
+      margin-left: 200px;
+      margin-right: 200px;
+    }
+    .card-head {
+      margin-left: 200px;
+      margin-right: 200px;
+    }
+    .payment-card p {
+      margin-left: 200px;
+      margin-right: 200px;
+      font-weight: 800;
+    }
+  }
+  
