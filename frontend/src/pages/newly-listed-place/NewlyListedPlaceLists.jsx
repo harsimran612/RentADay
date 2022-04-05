@@ -9,7 +9,7 @@ export default function NewlyListedPlaceLists() {
   const [newlyListed, setNewlyListed] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("http://localhost:8080/api/listing/all")
+    fetch("/api/listing/all")
       .then((res) => res.json())
       .then((data) => {
         setNewlyListed(data.listings);

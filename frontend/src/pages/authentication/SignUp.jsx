@@ -70,7 +70,7 @@ const UserForm = ({ showPswd, setShowPswd }) => {
         body: JSON.stringify({ name, email, password })
       };
 
-      fetch("http://localhost:8080/api/user", config).then(res => res.json()).then(res => {
+      fetch("/api/user", config).then(res => res.json()).then(res => {
         if (res.success) {
           // close backdrop
           handleBackdrop(false);
