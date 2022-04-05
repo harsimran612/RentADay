@@ -21,36 +21,17 @@ app.use(function(req, res, next) {
   next();
 });
 // app.use(cors()) // Use this after the variable declaration
+
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, 'build')))
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname + 'build', 'index.html'))
 })
+
 app.use(appRouter);
 app.use(notFound);
 app.use(errorHandler);
-
-
-
-
-// process.on('unhandledRejection', (reason, promise) => {
-//   console.log(reason)
-// });
-
-// process.on('uncaughtException', (reason) => {
-//   console.log(reason)
-// });
-
-// process.on('SIGTERM', signal => {
-//   console.log(`Process ${process.pid} received a SIGTERM signal`)
-//   process.exit(0)
-// });
-
-// process.on('SIGINT', signal => {
-//   console.log(`Process ${process.pid} has been interrupted`)
-//   process.exit(0)
-// });
 
 const PORT = process.env.PORT || 8080
 app.listen(PORT, function(){
