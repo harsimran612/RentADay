@@ -8,6 +8,7 @@ import Splash from './pages/Splash';
 import Profile from './pages/Profile';
 import ExpandedCard from './pages/ExpandedCard';
 import AddListing from './pages/AddListing';
+import Payment from './pages/Payment';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
@@ -46,6 +47,7 @@ function App() {
 
           <Route path="/expandedcard" element={<ExpandedCard/>}/>
           <Route path="/addlisting" element={<AddListing/>}/>
+          <Route path="/payment" element={<Payment/>}/>
         
           <Route path="/closest-place" element={<ClosestPlaceLists />} />
           <Route path="/closest-place/:placeId" element={<DetailedClosestPlace />} />
