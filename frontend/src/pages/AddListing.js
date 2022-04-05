@@ -49,7 +49,7 @@ function AddListing() {
             body: formData
         };
 
-        fetch('/api/listing/new', config).then(res => res.json()).then(data => {
+        fetch('https://rent-a-day.herokuapp.com/api/listing/new', config).then(res => res.json()).then(data => {
             if (data.success) {
                 handleBackdrop(false);
                 handlerSnackbar({ message: data.message, type: "success", duration: 2000 });

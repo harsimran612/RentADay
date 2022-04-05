@@ -12,7 +12,7 @@ export default function DetailedNewlyListedPlace() {
   // ------------
   const [place, setPlace] = React.useState([]);
   React.useEffect(() => {
-    fetch("/api/listing/all")
+    fetch("https://rent-a-day.herokuapp.com/api/listing/all")
       .then((res) => res.json())
       .then((data) => {
         const place = data.listings.filter((place) => place._id === placeId)[0];

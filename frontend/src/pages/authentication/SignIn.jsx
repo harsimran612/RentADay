@@ -64,7 +64,7 @@ const UserForm = ({ showPswd, setShowPswd }) => {
         body: JSON.stringify({ email, password })
       };
 
-      fetch("/api/user/login", config).then(res => res.json()).then(res => {
+      fetch("https://rent-a-day.herokuapp.com/api/user/login", config).then(res => res.json()).then(res => {
         if (res.success) {
           // close backdrop
           handleBackdrop(false);

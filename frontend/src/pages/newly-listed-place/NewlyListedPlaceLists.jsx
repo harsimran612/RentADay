@@ -15,7 +15,7 @@ export default function NewlyListedPlaceLists() {
         "Content-type": "application/json",
       }
     };
-    fetch("/api/listing/all", config)
+    fetch("https://rent-a-day.herokuapp.com/api/listing/all", config)
       .then((res) => res.json())
       .then((data) => {
         setNewlyListed(data.listings);

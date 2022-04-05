@@ -19,7 +19,7 @@ function Home(){
               "Content-type": "application/json",
             }
           };
-        fetch("http://rent-a-day.herokuapp.com/api/listing/all", config).then(res => res.json()).then(data => {
+        fetch("https://rent-a-day.herokuapp.com/api/listing/all", config).then(res => res.json()).then(data => {
             setNewlyListed(data.listings.reverse());
         }).catch(err => console.log(err));
     }, []);

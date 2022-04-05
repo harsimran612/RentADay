@@ -22,16 +22,6 @@ app.use(function(req, res, next) {
 });
 app.use(cors()) // Use this after the variable declaration
 
-// Serve static files from the React frontend app
-//if(process.env.NODE_ENV){
- // app.use(express.static('frontend/build'))
-
- // app.get('/*', (req, res) => {
- //   res.sendFile(path.resolve(__dirname + '/frontend/build', 'index.html'))
- // })
-//}
-// "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
-
 app.use(appRouter);
 app.use(notFound);
 app.use(errorHandler);
