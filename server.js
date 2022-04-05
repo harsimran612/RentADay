@@ -23,11 +23,14 @@ app.use(function(req, res, next) {
 // app.use(cors()) // Use this after the variable declaration
 
 // Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, 'frontend/build')))
+if(process.env.NODE_ENV){
+  app.use(express.static(path.resolve(process.cwd(), 'frontend/build')))
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + 'frontend/build', 'index.html'))
-})
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(process.cwd() + 'frontend/build', 'index.html'))
+  })
+}
+
 
 app.use(appRouter);
 app.use(notFound);
