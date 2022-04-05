@@ -21,17 +21,17 @@ app.use(function(req, res, next) {
   next();
 });
 // app.use(cors()) // Use this after the variable declaration
-
-app.use(appRouter);
-app.use(notFound);
-app.use(errorHandler);
-
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, 'build')))
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname + 'build', 'index.html'))
 })
+app.use(appRouter);
+app.use(notFound);
+app.use(errorHandler);
+
+
 
 
 // process.on('unhandledRejection', (reason, promise) => {
