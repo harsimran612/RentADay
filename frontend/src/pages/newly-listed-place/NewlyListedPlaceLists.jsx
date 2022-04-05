@@ -9,7 +9,13 @@ export default function NewlyListedPlaceLists() {
   const [newlyListed, setNewlyListed] = React.useState([]);
 
   React.useEffect(() => {
-    fetch("/api/listing/all")
+    const config = {
+      method: 'GET',
+      headers: {
+        "Content-type": "application/json",
+      }
+    };
+    fetch("/api/listing/all", config)
       .then((res) => res.json())
       .then((data) => {
         setNewlyListed(data.listings);
@@ -20,7 +26,7 @@ export default function NewlyListedPlaceLists() {
     <div className="main__page">
       <Header />
       <div className="rp__container--xl">
-        <MobileNav link="/home" page="Recommended Place" />
+        <MobileNav link="/home" page="Newly Listed" />
         <DesktopNav
           page1="Listings"
           page1Link="/home"

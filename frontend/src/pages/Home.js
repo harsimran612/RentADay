@@ -13,9 +13,15 @@ function Home(){
     const [newlyListed, setNewlyListed] = React.useState([]);
     
     React.useEffect(() => {
-        fetch("/api/listing/all").then(res => res.json()).then(data => {
+        const config = {
+            method: 'GET',
+            headers: {
+              "Content-type": "application/json",
+            }
+          };
+        fetch("/api/listing/all", config).then(res => res.json()).then(data => {
             setNewlyListed(data.listings.reverse());
-        });
+        }).catch(err => console.log(err));
     }, []);
 
     return(
