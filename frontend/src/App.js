@@ -6,7 +6,6 @@ import SignIn from './pages/authentication/SignIn';
 import SignUp from './pages/authentication/SignUp';
 import Splash from './pages/Splash';
 import Profile from './pages/Profile';
-import ExpandedCard from './pages/ExpandedCard';
 import AddListing from './pages/AddListing';
 import Payment from './pages/Payment';
 
@@ -45,7 +44,6 @@ function App() {
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/profile/:username" element={<Profile />} />
 
-          <Route path="/expandedcard" element={<ExpandedCard/>}/>
           <Route path="/addlisting" element={<AddListing/>}/>
           <Route path="/payment" element={<Payment/>}/>
         
