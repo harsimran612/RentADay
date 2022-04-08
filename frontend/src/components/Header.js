@@ -49,7 +49,6 @@ function Header(){
                             <NavDropdown.Item href={"../AddListing"}>Add New Listing</NavDropdown.Item>
                             <NavDropdown.Item href={"../profile"}>Profile</NavDropdown.Item>
                             <NavDropdown.Item href={"../payment"}>Payment</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Newsletter</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#" onClick={logOutHandler}>Logout</NavDropdown.Item>
                         </NavDropdown>
